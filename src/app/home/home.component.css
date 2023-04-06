@@ -1,0 +1,23 @@
+.container{
+  width: 100%;
+  height: 91%;
+}
+
+.small_container {
+  width: 100%;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card{
+  width: 9%;
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 500;
+  padding-left: 1rem;
+}
