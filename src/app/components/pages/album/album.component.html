@@ -1,0 +1,14 @@
+<div *ngIf="album" class="album-detail">
+  <a class="back-link" routerLink="/home">
+    <i class="back-icon"></i>
+    Retour à l'accueil
+  </a>
+  <h1>{{ album.title }}</h1>
+  <h2>{{ album.artist.name }}</h2>
+  <h2>Musiques</h2>
+  <div class="song-grid">
+    <div *ngFor="let song of album.songs">
+      <app-song-card class="card" [song]="song" [showDescription]="false"></app-song-card>
+    </div>
+  </div>
+</div>

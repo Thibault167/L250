@@ -1,14 +1,13 @@
-<div class="container">
-  <button><img src="assets/add.png" alt="add icon"></button>
+<div class="container" (click)="togglePlayer()">
+  <button><img src="../../../../assets/add.png" alt="add icon"></button>
   <div class="name">
     <div class="text-container">
       <p>{{ song.title }}</p>
     </div>
   </div>
 
-  <div class="description">
+  <div class="description" *ngIf="showDescription">
     <p class="artist">{{ song.artist.name }}</p>
     <p class="album">{{ song.album.title }}</p>
   </div>
-
 </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ArtistService} from "../services/artist.service";
-import {SongService} from "../services/song.service";
-import {AlbumService} from "../services/album.service";
+import {ArtistService} from "../../../services/artist.service";
+import {SongService} from "../../../services/song.service";
+import {AlbumService} from "../../../services/album.service";
 
 @Component({
   selector: 'app-home',

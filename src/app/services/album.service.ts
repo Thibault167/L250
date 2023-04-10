@@ -29,4 +29,18 @@ export class AlbumService {
       })
     );
   }
+
+  getAlbum(id: number) {
+    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(
+      switchMap(album => {
+        const artistRequest = this.http.get(this.formatUrl(album.artist.id));
+        return forkJoin([artistRequest]).pipe(
+          map((results: any[]) => {
+            const [artist] = results;
+            return { ...album, artist };
+          }
+        ));
+      })
+    );
+  }
 }

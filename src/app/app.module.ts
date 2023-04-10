@@ -3,16 +3,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule, Routes} from "@angular/router";
 
 import {AppComponent} from './app.component';
-import {HomeComponent} from "./home/home.component";
-import {SearchComponent} from './search/search.component';
-import {PlaylistComponent} from './playlist/playlist.component';
-import {CreateComponent} from './create/create.component';
-import {ArtistComponent} from './artist/artist.component';
-import {AlbumComponent} from './album/album.component';
-import {NavbarComponent} from './navbar/navbar.component';
-import {SongCardComponent} from './song-card/song-card.component';
-import {ArtistCardComponent} from './artist-card/artist-card.component';
-import {AlbumCardComponent} from './album-card/album-card.component';
+import {HomeComponent} from "./components/pages/home/home.component";
+import {SearchComponent} from './components/pages/search/search.component';
+import {PlaylistComponent} from './components/pages/playlist/playlist.component';
+import {CreateComponent} from './components/pages/create/create.component';
+import {ArtistComponent} from './components/pages/artist/artist.component';
+import {AlbumComponent} from './components/pages/album/album.component';
+import {NavbarComponent} from './components/partials/navbar/navbar.component';
+import {SongCardComponent} from './components/partials/song-card/song-card.component';
+import {ArtistCardComponent} from './components/partials/artist-card/artist-card.component';
+import {AlbumCardComponent} from './components/partials/album-card/album-card.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ArtistService} from "./services/artist.service";
 import {SongService} from "./services/song.service";
@@ -25,9 +25,8 @@ const routes: Routes = [
   {path: 'create', component: CreateComponent},
   {path: 'artist', component: ArtistComponent},
   {path: 'album', component: AlbumComponent},
-  {path: 'song_card', component: SongCardComponent},
-  {path: 'artist_card', component: ArtistCardComponent},
-  {path: 'album_card', component: AlbumCardComponent},
+  { path: 'artist/:id', component: ArtistComponent },
+  { path: 'album/:id', component: AlbumComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ]
 
@@ -48,7 +47,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   providers: [
     ArtistService,

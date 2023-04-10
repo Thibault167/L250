@@ -32,5 +32,19 @@ export class ArtistService {
     );
   }
 
+  getArtist(id: number) {
+    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(
+      switchMap(artist => {
+        const albumRequests = artist.albums.map((albumUrl: string) => this.http.get(this.formatUrl(albumUrl)));
+        return forkJoin([...albumRequests]).pipe(
+          map((results: any[]) => {
+            const albums = results;
+            return { ...artist, albums };
+          })
+        );
+      })
+    );
+  }
+
 }
 
