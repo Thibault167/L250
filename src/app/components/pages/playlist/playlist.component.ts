@@ -11,10 +11,18 @@ export class PlaylistComponent implements OnInit {
   constructor(private playlistService: PlaylistService) { }
 
   ngOnInit(): void {
-    const id = parseInt(window.location.pathname.split('/')[2])
+    const id = this.extractId(window.location.pathname)
     this.playlistService.getPlaylistById(id).subscribe(playlist => {
       this.playlist = playlist;
     });
+  }
+
+  extractId(url: string): number {
+    let urlParts = url.split('/');
+
+    let id = urlParts[urlParts.length - 1];
+
+    return parseInt(id,10);
   }
 
 }

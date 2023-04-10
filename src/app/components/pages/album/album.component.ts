@@ -11,10 +11,18 @@ export class AlbumComponent implements OnInit {
   constructor(private albumService: AlbumService) { }
 
   ngOnInit(): void {
-    const id = parseInt(window.location.pathname.split('/')[2])
+    const id = this.extractId(window.location.pathname)
     this.albumService.getAlbum(id).subscribe(album => {
       this.album = album;
     });
+  }
+
+  extractId(url: string): number {
+    let urlParts = url.split('/');
+
+    let id = urlParts[urlParts.length - 1];
+
+    return parseInt(id,10);
   }
 
 }

@@ -17,8 +17,16 @@ export class SongCardComponent implements OnInit {
 
   removeFromPlaylist(): void {
     if (window.location.pathname.includes('my-playlist')) {
-      this.playlistService.removeSongFromPlaylist(parseInt(window.location.pathname.split('/')[2]), this.song.id);
+      this.playlistService.removeSongFromPlaylist(this.extractId(window.location.pathname), this.song.id);
     }
+  }
+
+  extractId(url: string): number {
+    let urlParts = url.split('/');
+
+    let id = urlParts[urlParts.length - 1];
+
+    return parseInt(id,10);
   }
 
 }

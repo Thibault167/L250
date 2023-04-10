@@ -19,10 +19,19 @@ export class SongComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = parseInt(window.location.pathname.split('/')[2]);
+    const id = this.extractId(window.location.pathname)
+    console.log(id)
     this.songService.getSongById(id).subscribe(song => {
       this.song = song;
       this.songURL = this.sanitizer.bypassSecurityTrustResourceUrl(song.youtube);
     });
+  }
+
+  extractId(url: string): number {
+    let urlParts = url.split('/');
+
+    let id = urlParts[urlParts.length - 1];
+
+    return parseInt(id,10);
   }
 }

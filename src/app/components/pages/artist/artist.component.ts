@@ -12,10 +12,18 @@ export class ArtistComponent implements OnInit {
 
   ngOnInit(): void {
     // get the id from the url
-    const id = parseInt(window.location.pathname.split('/')[2])
+    const id = this.extractId(window.location.pathname)
     this.artistService.getArtist(id).subscribe(artist => {
       this.artist = artist;
     });
+  }
+
+  extractId(url: string): number {
+    let urlParts = url.split('/');
+
+    let id = urlParts[urlParts.length - 1];
+
+    return parseInt(id,10);
   }
 
 }
