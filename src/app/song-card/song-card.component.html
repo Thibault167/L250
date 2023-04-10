@@ -2,13 +2,13 @@
   <button><img src="assets/add.png" alt="add icon"></button>
   <div class="name">
     <div class="text-container">
-      <p>NOM DE LA MUSIQUE SUPER LONG</p>
+      <p>{{ song.title }}</p>
     </div>
   </div>
 
   <div class="description">
-    <p class="artist">Artiste</p>
-    <p class="album">Album</p>
+    <p class="artist">{{ song.artist.name }}</p>
+    <p class="album">{{ song.album.title }}</p>
   </div>
 
 </div>

@@ -13,6 +13,10 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {SongCardComponent} from './song-card/song-card.component';
 import {ArtistCardComponent} from './artist-card/artist-card.component';
 import {AlbumCardComponent} from './album-card/album-card.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ArtistService} from "./services/artist.service";
+import {SongService} from "./services/song.service";
+import {AlbumService} from "./services/album.service";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -39,13 +43,18 @@ const routes: Routes = [
     NavbarComponent,
     SongCardComponent,
     ArtistCardComponent,
-    AlbumCardComponent
+    AlbumCardComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    ArtistService,
+    SongService,
+    AlbumService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

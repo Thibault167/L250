@@ -1,11 +1,11 @@
 <div class="container">
   <div class="name">
-    <p>NOM DE L'ARTISTE</p>
+    <p>{{ artist.name }}</p>
   </div>
 
   <div class="description">
-    <p class="first_album">Album 1</p>
-    <p class="second_album">Album 2</p>
+    <p class="first_album">{{ artist.albums[0].title }}</p>
+    <p class="second_album">{{ artist.albums[1].title }}</p>
   </div>
 
 </div>
