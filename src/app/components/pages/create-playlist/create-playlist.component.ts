@@ -25,7 +25,9 @@ export class CreatePlaylistComponent implements OnInit {
       (data) => {
         this.playlistService.addPlaylistToMyPlaylists(data.id, data.name);
         window.alert('Playlist créee avec succès');
-        window.location.href='/my-playlists';
+        let url = window.location.href;
+        url = url.substring(0, url.lastIndexOf('/'));
+        window.location.href = url + '/my-playlists'
       }
     )
   }
