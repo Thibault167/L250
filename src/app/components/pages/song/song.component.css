@@ -1,13 +1,5 @@
-.album-detail{
+.container{
   width: 100%;
-}
-
-.song-grid{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-  padding-left: 1rem;
-  padding-top: 2rem;
 }
 
 h1{
@@ -15,7 +7,7 @@ h1{
   font-weight: 550;
 }
 
-span{
+h1 span{
   font-size: 1.7rem;
   font-weight: 550;
 }
@@ -25,15 +17,19 @@ h2{
   font-weight: 500;
 }
 
-h3{
-  font-size: 0.8rem;
+h2 span{
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
-.name{
-  margin-bottom: 1rem;
+.video{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(1rem, 8%, 15rem);
 }
-
 
 .back-link {
   display: inline-flex;

@@ -16,9 +16,7 @@ export class SongCardComponent implements OnInit {
   }
 
   removeFromPlaylist(): void {
-    console.log(window.location.pathname)
     if (window.location.pathname.includes('my-playlist')) {
-      console.log('remove from playlist');
       this.playlistService.removeSongFromPlaylist(parseInt(window.location.pathname.split('/')[2]), this.song.id);
     }
   }

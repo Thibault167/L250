@@ -1,0 +1,16 @@
+<div class="container">
+  <a class="back-link" routerLink="/home">
+    <i class="back-icon"></i>
+    Retour à l'accueil
+  </a>
+  <h1><span>Titre : </span>{{song.title}}</h1>
+  <h2><span>Artiste : </span>{{song.artist.name}}</h2>
+  <h2><span>Album : </span>{{song.album.title}}</h2>
+  <h2><span>Type : </span>{{song.album.albumtype.name}}</h2>
+  <div class="video">
+    <iframe width="560" height="315" [src]="songURL" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+  </div>
+
+</div>

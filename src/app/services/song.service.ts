@@ -38,16 +38,17 @@ export class SongService {
 
   getSongById(id: number) {
     return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(
-      switchMap(song => {
-        const artistRequest = this.http.get(this.formatUrl(song.artist));
-        const albumRequest = this.http.get(this.formatUrl(song.album));
-        return forkJoin([artistRequest, albumRequest]).pipe(
-          map((results: any[]) => {
+    switchMap(song => {
+      const artistRequest = this.http.get(this.formatUrl(song.artist));
+      const albumRequest = this.http.get(this.formatUrl(song.album));
+      return forkJoin([artistRequest, albumRequest]).pipe(
+        map((results: any[]) => {
             const [artist, album] = results;
             return { ...song, artist, album };
           }
         ));
-      })
-    );
+    })
+  );
   }
+
 }

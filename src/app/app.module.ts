@@ -21,6 +21,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PlaylistCardComponent } from './components/partials/playlist-card/playlist-card.component';
 import { PlaylistComponent } from './components/pages/playlist/playlist.component';
 import { PlaylistSelectionModalComponent } from './components/partials/playlist-selection-modal/playlist-selection-modal.component';
+import { SongComponent } from './components/pages/song/song.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path: 'my-playlists/:id', component: PlaylistComponent},
   { path: 'artist/:id', component: ArtistComponent },
   { path: 'album/:id', component: AlbumComponent },
+  { path: 'song/:id', component: SongComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ]
 
@@ -51,6 +53,7 @@ const routes: Routes = [
     PlaylistCardComponent,
     PlaylistComponent,
     PlaylistSelectionModalComponent,
+    SongComponent,
   ],
   imports: [
     BrowserModule,

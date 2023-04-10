@@ -1,3 +1,7 @@
+.container{
+  width: 100%;
+}
+
 .search-container {
   display: flex;
   align-items: center;
@@ -7,6 +11,7 @@
   border: 1px solid #ccc;
   border-radius: 30px;
   padding: 5px 10px;
+  margin: 1rem 0;
 }
 
 .search-container input {
@@ -17,36 +22,45 @@
   padding: 5px;
 }
 
-.search-container button {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.search-container i {
-  font-size: 18px;
-  color: #333;
-}
-
-.container{
-  width: 100%;
+.search_results{
+  display: grid;
+  grid-template-columns: repeat(2,50%);
 }
 
 .small_container {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 1rem 0;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1.5rem 0;
+  overflow-x: scroll;
 }
 
 .card{
-  width: 9%;
+  min-width: 100px;
 }
 
 h1{
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 500;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6b6b6b;
 }

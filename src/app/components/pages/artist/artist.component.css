@@ -3,10 +3,30 @@
 }
 
 .album-grid {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding-left: 1rem;
+  padding-top: 2rem;
+}
+
+h1{
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+
+span{
+  font-size: 1.7rem;
+  font-weight: 550;
+}
+
+h2{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.card{
+  width: 12rem;
 }
 
 .back-link {

@@ -3,9 +3,9 @@
     <i class="back-icon"></i>
     Retour à l'accueil
   </a>
-  <h1 class="name">{{ album.title }}</h1>
-  <h2 class="name">{{ album.artist.name }}</h2>
-  <h2>Musiques</h2>
+  <h1 class="name"><span>Titre de l'album :</span> {{ album.title }}</h1>
+  <h2 class="name">Artiste : {{ album.artist.name }}</h2>
+  <h1>Musiques :</h1>
   <div class="song-grid">
     <app-song-card *ngFor="let song of album.songs" class="card" [song]="song"
                    [showDescription]="false"></app-song-card>

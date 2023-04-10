@@ -25,7 +25,7 @@ export class CreatePlaylistComponent implements OnInit {
       (data) => {
         this.playlistService.addPlaylistToMyPlaylists(data.id, data.name);
         window.alert('Playlist créee avec succès');
-        window.location.reload();
+        window.location.href='/my-playlists';
       }
     )
   }

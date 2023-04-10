@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 200px;
+  height: 170px;
   padding: 1rem .5rem;
   background-color: rgba(0, 0, 0, 0.16);
   border-radius: 5px;
@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: flex-end;
   background: url("https://picsum.photos/215/300") no-repeat center;
-  font-size: 1.2em;
+  font-size: clamp(.1rem, 60%, 2rem);
   font-weight: bold;
   text-align: center;
   padding-bottom: 1rem;
@@ -54,10 +54,10 @@
 .description .first_album {
   margin-top: .5rem;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: clamp(.1rem, 90%, 2rem);
 }
 
 .description .second_album {
-  font-size: 0.8rem;
+  font-size: clamp(.1rem, 70%, 2rem);
   opacity: 80%;
 }
