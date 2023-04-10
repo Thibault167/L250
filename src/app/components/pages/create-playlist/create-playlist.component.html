@@ -1,0 +1,13 @@
+
+
+<div class="container">
+  <h1>Créer une nouvelle playlist : </h1>
+  <form [formGroup]="playlistForm" (ngSubmit)="onSubmit()">
+    <div class="input_container">
+      <label for="playlistName">Nom de la playlist :</label>
+      <input id="playlistName" type="text" formControlName="playlistName">
+    </div>
+    <button class="submit" type="submit" [disabled]="playlistForm.invalid">Créer une playlist</button>
+  </form>
+
+</div>

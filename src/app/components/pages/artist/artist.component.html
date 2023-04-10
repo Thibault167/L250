@@ -3,11 +3,9 @@
     <i class="back-icon"></i>
     Retour à l'accueil
   </a>
-  <h1>{{ artist.name }}</h1>
+  <h1 class="name">{{ artist.name }}</h1>
   <h2>Albums</h2>
   <div class="album-grid">
-    <div *ngFor="let album of artist.albums">
-      <app-album-card class="card" [album]="album"></app-album-card>
-    </div>
+    <app-album-card *ngFor="let album of artist.albums" class="card" [album]="album"></app-album-card>
   </div>
 </div>

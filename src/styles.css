@@ -40,3 +40,10 @@ body {
   height: 100vh;
   font-family: 'Montserrat', serif;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+

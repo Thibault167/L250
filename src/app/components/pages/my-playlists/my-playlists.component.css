@@ -1,13 +1,13 @@
-.song-grid {
+.playlist-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
-  margin-top: 1rem;
 }
 
 .name{
   margin-bottom: 1rem;
 }
+
 
 .back-link {
   display: inline-flex;
