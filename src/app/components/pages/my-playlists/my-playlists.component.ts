@@ -12,7 +12,6 @@ export class MyPlaylistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchPlaylists();
-    console.log(this.myPlaylists);
   }
 
   fetchPlaylists() {

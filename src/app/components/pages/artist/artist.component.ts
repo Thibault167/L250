@@ -15,7 +15,6 @@ export class ArtistComponent implements OnInit {
     const id = parseInt(window.location.pathname.split('/')[2])
     this.artistService.getArtist(id).subscribe(artist => {
       this.artist = artist;
-      console.log(this.artist);
     });
   }
 

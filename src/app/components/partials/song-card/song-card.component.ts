@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {PlaylistService} from "../../../services/playlist.service";
 
 @Component({
   selector: 'app-song-card',
@@ -8,14 +9,18 @@ import {Component, Input, OnInit} from '@angular/core';
 export class SongCardComponent implements OnInit {
   @Input() song: any;
   @Input() showDescription: boolean = true;
-  showPlayer = false;
-  constructor() { }
+  @Input() showAddIcon: boolean = true;
+  constructor(private playlistService: PlaylistService) { }
 
   ngOnInit(): void {
   }
 
-  togglePlayer() {
-    this.showPlayer = !this.showPlayer;
+  removeFromPlaylist(): void {
+    console.log(window.location.pathname)
+    if (window.location.pathname.includes('my-playlist')) {
+      console.log('remove from playlist');
+      this.playlistService.removeSongFromPlaylist(parseInt(window.location.pathname.split('/')[2]), this.song.id);
+    }
   }
 
 }

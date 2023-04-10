@@ -39,7 +39,6 @@ export class PlaylistSelectionModalComponent implements OnInit {
 
   addSongToPlaylist(): void {
     if (this.selectedPlaylist) {
-      // Ajoutez ici la logique pour ajouter la chanson à la playlist sélectionnée
       this.playlistService.addSongToPlaylist(this.selectedPlaylist, this.songId)
     }
     this.closeModal();

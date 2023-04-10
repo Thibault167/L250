@@ -25,11 +25,11 @@ import { PlaylistSelectionModalComponent } from './components/partials/playlist-
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'playlist', component: MyPlaylistsComponent},
+  {path: 'my-playlists', component: MyPlaylistsComponent},
   {path: 'create-playlist', component: CreatePlaylistComponent},
   {path: 'artist', component: ArtistComponent},
   {path: 'album', component: AlbumComponent},
-  {path: 'playlist/:id', component: PlaylistComponent},
+  {path: 'my-playlists/:id', component: PlaylistComponent},
   { path: 'artist/:id', component: ArtistComponent },
   { path: 'album/:id', component: AlbumComponent },
   {path: '', redirectTo: '/home', pathMatch: 'full'},

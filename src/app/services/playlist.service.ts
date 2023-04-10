@@ -39,14 +39,24 @@ export class PlaylistService {
           songs.push('/~morap01/L250/public/index.php/api/songs/' + playlist.songs[i].id);
         }
         songs.push('/~morap01/L250/public/index.php/api/songs/' + songId);
-        this.http.patch(this.apiUrl + '/' + playlistId, {songs: songs}).subscribe(
-          (response) => {
-            console.log('Chanson ajoutée avec succès à la playlist', response);
-          },
-          (error) => {
-            console.error('Erreur lors de l\'ajout de la chanson à la playlist', error);
+        this.http.patch(this.apiUrl + '/' + playlistId, {songs: songs})
+      });
+  }
+
+  removeSongFromPlaylist(playlistId: number, songId: number): void {
+    this.getPlaylistById(playlistId).subscribe(
+      (playlist) => {
+        const songs: string[] = [];
+        for (let i = 0; i < playlist.songs.length; i++) {
+          if (playlist.songs[i].id !== songId) {
+            songs.push('/~morap01/L250/public/index.php/api/songs/' + playlist.songs[i].id);
           }
-        );
+        }
+        this.http.patch(this.apiUrl + '/' + playlistId, {songs: songs}).subscribe(
+          () => {
+            window.location.reload();
+          }
+        )
       });
   }
 }

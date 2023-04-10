@@ -1,6 +1,9 @@
-<div class="container" (click)="togglePlayer()">
-  <button (click)="playlistSelectionModal.openModal(); $event.stopPropagation();">
+<div class="container">
+  <button *ngIf="showAddIcon" (click)="playlistSelectionModal.openModal(); $event.stopPropagation();">
     <img src="assets/add.png" alt="add icon">
+  </button>
+  <button *ngIf="!showAddIcon" (click)="removeFromPlaylist()">
+    <img src="assets/remove.png" alt="remove icon">
   </button>
   <div class="name">
     <div class="text-container">
