@@ -13,8 +13,12 @@ export class AlbumService {
   private formatUrl(id: string): string {
     return `https://mmi.unilim.fr/~morap01/L250/public/index.php/api/artists/${id}`;
   }
-  getAlbums() {
-    return this.http.get<any[]>(this.apiUrl).pipe(
+  getAlbums(search: string = '') {
+    let url = this.apiUrl;
+    if (search) {
+      url += `?title=${search}`;
+    }
+    return this.http.get<any[]>(url).pipe(
       switchMap(albums => {
         const firstAlbums = albums.slice(0, 8);
         const requests = firstAlbums.map(album => {

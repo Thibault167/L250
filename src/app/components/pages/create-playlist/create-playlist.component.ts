@@ -23,7 +23,7 @@ export class CreatePlaylistComponent implements OnInit {
   onSubmit() {
     this.playlistService.createPlaylist(this.playlistForm.value.playlistName).subscribe(
       (data) => {
-        this.playlistService.addPlaylistToMyPlaylists(data.id);
+        this.playlistService.addPlaylistToMyPlaylists(data.id, data.name);
         window.location.reload();
       }
     )

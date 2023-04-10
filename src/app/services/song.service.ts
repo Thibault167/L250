@@ -13,8 +13,12 @@ export class SongService {
   private formatUrl(url: string): string {
     return `https://mmi.unilim.fr${url}`;
   }
-  getSongs() {
-    return this.http.get<any[]>(this.apiUrl).pipe(
+  getSongs(search: string = '') {
+    let url = this.apiUrl;
+    if (search) {
+      url += `?title=${search}`;
+    }
+    return this.http.get<any[]>(url).pipe(
       switchMap(songs => {
         const firstSongs = songs.slice(0, 8);
         const requests = firstSongs.map(song => {

@@ -1,9 +1,31 @@
 <div class="container">
-  <div class="search_container">
-    <label for="search">Rechercher</label>
-    <input type="text" id="search" name="search" placeholder="Rechercher..">
+  <div class="search-container">
+    <input [(ngModel)]="searchQuery" (ngModelChange)="onSearchChange()" type="text" placeholder="Rechercher...">
   </div>
   <div class="search_results">
-
+    <div class="artists">
+      <h1>Artistes</h1>
+      <div class="small_container">
+        <app-artist-card *ngFor="let artist of artists" class="card" [artist]="artist"></app-artist-card>
+      </div>
+    </div>
+    <div class="songs">
+      <h1>Musiques</h1>
+      <div class="small_container">
+        <app-song-card *ngFor="let song of songs" class="card" [song]="song"></app-song-card>
+      </div>
+    </div>
+    <div class="albums">
+      <h1>Albums</h1>
+      <div class="small_container">
+        <app-album-card *ngFor="let album of albums" class="card" [album]="album"></app-album-card>
+      </div>
+    </div>
+    <div class="playlist">
+      <h1>Playlist</h1>
+      <div class="small_container">
+        <app-album-card *ngFor="let album of albums" class="card" [album]="album"></app-album-card>
+      </div>
+    </div>
   </div>
 </div>

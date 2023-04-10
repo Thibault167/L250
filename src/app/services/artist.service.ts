@@ -13,8 +13,12 @@ export class ArtistService {
   private formatUrl(url: string): string {
     return `https://mmi.unilim.fr${url}`;
   }
-  getArtists() {
-    return this.http.get<any[]>(this.apiUrl).pipe(
+  getArtists(search: string = '') {
+    let url = this.apiUrl;
+    if (search) {
+      url += `?name=${search}`;
+    }
+    return this.http.get<any[]>(url).pipe(
       switchMap(artists => {
         const firstArtists = artists.slice(0, 8);
         const requests = firstArtists.map(artist => {

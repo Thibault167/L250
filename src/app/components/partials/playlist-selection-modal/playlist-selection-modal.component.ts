@@ -19,9 +19,9 @@ export class PlaylistSelectionModalComponent implements OnInit {
   }
 
   fetchPlaylists() {
-    const playlistIds = JSON.parse(localStorage.getItem('myPlaylistIds') || '[]');
-    playlistIds.forEach((id: number) => {
-      this.playlistService.getPlaylistById(id).subscribe(
+    const playlistIds = JSON.parse(localStorage.getItem('myPlaylists') || '[]');
+    playlistIds.forEach((playlist: any) => {
+      this.playlistService.getPlaylistById(playlist.id).subscribe(
         (playlist) => {
           this.playlists.push(playlist);
         }

@@ -1,0 +1,52 @@
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 5px 10px;
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.search-container button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-container i {
+  font-size: 18px;
+  color: #333;
+}
+
+.container{
+  width: 100%;
+}
+
+.small_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+
+.card{
+  width: 9%;
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 500;
+}

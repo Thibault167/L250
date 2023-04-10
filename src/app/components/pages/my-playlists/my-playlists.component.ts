@@ -15,9 +15,9 @@ export class MyPlaylistsComponent implements OnInit {
   }
 
   fetchPlaylists() {
-    const playlistIds = JSON.parse(localStorage.getItem('myPlaylistIds') || '[]');
-    playlistIds.forEach((id: number) => {
-      this.playlistService.getPlaylistById(id).subscribe(
+    const playlists = JSON.parse(localStorage.getItem('myPlaylists') || '[]');
+    playlists.forEach((playlist: any) => {
+      this.playlistService.getPlaylistById(playlist.id).subscribe(
         (playlist) => {
           this.myPlaylists.push(playlist);
         }
