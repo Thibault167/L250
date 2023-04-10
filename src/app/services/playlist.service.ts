@@ -27,9 +27,26 @@ export class PlaylistService {
     myPlaylists.push(playlistId);
     window.localStorage.setItem('myPlaylistIds', JSON.stringify(myPlaylists));
   }
-
   getPlaylistById(id: number): Observable<any> {
     return this.http.get(this.apiUrl + '/' + id);
   }
 
+  addSongToPlaylist(playlistId: number, songId: number): void {
+    this.getPlaylistById(playlistId).subscribe(
+      (playlist) => {
+        const songs: string[] = [];
+        for (let i = 0; i < playlist.songs.length; i++) {
+          songs.push('/~morap01/L250/public/index.php/api/songs/' + playlist.songs[i].id);
+        }
+        songs.push('/~morap01/L250/public/index.php/api/songs/' + songId);
+        this.http.patch(this.apiUrl + '/' + playlistId, {songs: songs}).subscribe(
+          (response) => {
+            console.log('Chanson ajoutée avec succès à la playlist', response);
+          },
+          (error) => {
+            console.error('Erreur lors de l\'ajout de la chanson à la playlist', error);
+          }
+        );
+      });
+  }
 }

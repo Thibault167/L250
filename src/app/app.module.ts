@@ -17,9 +17,10 @@ import {ArtistService} from "./services/artist.service";
 import {SongService} from "./services/song.service";
 import {AlbumService} from "./services/album.service";
 import { CreatePlaylistComponent } from './components/pages/create-playlist/create-playlist.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PlaylistCardComponent } from './components/partials/playlist-card/playlist-card.component';
 import { PlaylistComponent } from './components/pages/playlist/playlist.component';
+import { PlaylistSelectionModalComponent } from './components/partials/playlist-selection-modal/playlist-selection-modal.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -49,12 +50,14 @@ const routes: Routes = [
     CreatePlaylistComponent,
     PlaylistCardComponent,
     PlaylistComponent,
+    PlaylistSelectionModalComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   providers: [
     ArtistService,

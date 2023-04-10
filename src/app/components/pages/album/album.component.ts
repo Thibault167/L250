@@ -14,7 +14,6 @@ export class AlbumComponent implements OnInit {
     const id = parseInt(window.location.pathname.split('/')[2])
     this.albumService.getAlbum(id).subscribe(album => {
       this.album = album;
-      console.log(this.album);
     });
   }
 

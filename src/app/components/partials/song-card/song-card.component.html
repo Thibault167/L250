@@ -1,5 +1,7 @@
 <div class="container" (click)="togglePlayer()">
-  <button><img src="assets/add.png" alt="add icon"></button>
+  <button (click)="playlistSelectionModal.openModal(); $event.stopPropagation();">
+    <img src="assets/add.png" alt="add icon">
+  </button>
   <div class="name">
     <div class="text-container">
       <p>{{ song.title }}</p>
@@ -11,3 +13,5 @@
     <p class="album">{{ song.album.title }}</p>
   </div>
 </div>
+
+<app-playlist-selection-modal [songId]="song.id" #playlistSelectionModal></app-playlist-selection-modal>
