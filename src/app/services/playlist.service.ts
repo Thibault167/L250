@@ -39,7 +39,11 @@ export class PlaylistService {
           songs.push('/~morap01/L250/public/index.php/api/songs/' + playlist.songs[i].id);
         }
         songs.push('/~morap01/L250/public/index.php/api/songs/' + songId);
-        this.http.patch(this.apiUrl + '/' + playlistId, {songs: songs}).subscribe()
+        this.http.patch(this.apiUrl + '/' + playlistId, {songs: songs}).subscribe(
+          (response: any) => {
+            window.alert('Chanson ajoutée à la playlist avec succès !');
+          }
+        )
       });
   }
 
@@ -54,9 +58,24 @@ export class PlaylistService {
         }
         this.http.patch(this.apiUrl + '/' + playlistId, {songs: songs}).subscribe(
           () => {
+            window.alert('Chanson supprimée à la playlist avec succès !');
             window.location.reload();
           }
         )
       });
+  }
+
+  getSearchedPlaylist(searchQuery: string): any {
+   const playlists = window.localStorage.getItem('myPlaylists');
+    if (playlists !== null) {
+      const myPlaylists = JSON.parse(playlists);
+      myPlaylists.forEach((playlist: any) => {
+        if (!playlist.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+          myPlaylists.pop(playlist);
+        }
+      });
+
+      return myPlaylists;
+    }
   }
 }

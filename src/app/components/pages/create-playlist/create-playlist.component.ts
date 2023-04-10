@@ -24,6 +24,7 @@ export class CreatePlaylistComponent implements OnInit {
     this.playlistService.createPlaylist(this.playlistForm.value.playlistName).subscribe(
       (data) => {
         this.playlistService.addPlaylistToMyPlaylists(data.id, data.name);
+        window.alert('Playlist créee avec succès');
         window.location.reload();
       }
     )
