@@ -1,4 +1,4 @@
-.playlist-grid{
+.song-grid{
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
