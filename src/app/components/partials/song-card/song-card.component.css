@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
   background-color: #090808;
-  clip-path: polygon(40% 20%, 95% 30%, 100% 40%, 100% 65% ,60% 80%, 0 65%, 0 30%);
+  margin-bottom: 1rem;
 }
 
 .text-container {

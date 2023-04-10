@@ -1,0 +1,11 @@
+<div *ngIf="playlist">
+  <a class="back-link" routerLink="/home">
+    <i class="back-icon"></i>
+    Retour à l'accueil
+  </a>
+  <h1 class="name">{{ playlist.name }}</h1>
+  <h2>Musiques</h2>
+  <div class="song-grid">
+    <app-song-card *ngFor="let song of playlist.songs" class="card" [song]="song"></app-song-card>
+  </div>
+</div>
